@@ -14,7 +14,27 @@ class CheatDiceViewController: UIViewController, UIGestureRecognizerDelegate {
     override func viewDidLoad() {
         super.viewDidLoad()
 
+        //シングルタップ用のインスタンスを生成する
+        let tapGesture: UITapGestureRecognizer = UITapGestureRecognizer(
+            target: self,
+            action: #selector(CheatDiceViewController.singleTap(_:))
+        )
         
+        //デリゲートをセット
+        tapGesture.delegate = self
+        
+        //viewにインスタンスを追加
+        self.view.addGestureRecognizer(tapGesture)
+        
+    }
+    
+    //シングルタップ時に実行されるメソッド
+    @objc func singleTap(_ sender: UITapGestureRecognizer) {
+        if sender.state == .ended {
+            
+            //サイコロの目を1にする
+            result.text = "1"
+        }
     }
     
     
