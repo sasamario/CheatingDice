@@ -26,6 +26,19 @@ class CheatDiceViewController: UIViewController, UIGestureRecognizerDelegate {
         //viewにインスタンスを追加
         self.view.addGestureRecognizer(tapGesture)
         
+        
+        //ロングプレス用のインスタンスを生成する
+        let longPressGesture = UILongPressGestureRecognizer(
+            target: self,
+            action: #selector(CheatDiceViewController.longPress(_:))
+        )
+        
+        //デリゲートをセット
+        longPressGesture.delegate = self
+        
+        //viewにロングプレスジェスチャーインスタンスを追加
+        self.view.addGestureRecognizer(longPressGesture)
+        
     }
     
     //シングルタップ時に実行されるメソッド
@@ -34,6 +47,13 @@ class CheatDiceViewController: UIViewController, UIGestureRecognizerDelegate {
             
             //サイコロの目を1にする
             result.text = "1"
+        }
+    }
+    
+    //ロングプレス時に実行されるメソッド
+    @objc func longPress(_ sender: UILongPressGestureRecognizer) {
+        if sender.state == .ended {
+            result.text = "2"
         }
     }
     
