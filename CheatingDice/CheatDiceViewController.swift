@@ -47,7 +47,14 @@ class CheatDiceViewController: UIViewController, UIGestureRecognizerDelegate {
         )
         upSwipe.direction = .up
         self.view.addGestureRecognizer(upSwipe)
-
+        
+        //右スワイプ用のインスタンスを生成する
+        let rightSwipe = UISwipeGestureRecognizer(
+            target: self,
+            action: #selector(CheatDiceViewController.didSwipe(_:))
+        )
+        rightSwipe.direction = .right
+        self.view.addGestureRecognizer(rightSwipe)
         
     }
     
@@ -74,6 +81,8 @@ class CheatDiceViewController: UIViewController, UIGestureRecognizerDelegate {
         switch sender.direction {
         case .up:
             result.text = "3"
+        case .right:
+            result.text = "4"
         default:
             break
         }
