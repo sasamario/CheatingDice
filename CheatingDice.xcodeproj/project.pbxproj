@@ -13,6 +13,7 @@
 		9A70D89125B05FC10004C045 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9A70D88F25B05FC10004C045 /* Main.storyboard */; };
 		9A70D89325B05FC50004C045 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9A70D89225B05FC50004C045 /* Assets.xcassets */; };
 		9A70D89625B05FC50004C045 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9A70D89425B05FC50004C045 /* LaunchScreen.storyboard */; };
+		9A70D8A025B06FF70004C045 /* CheatDiceViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A70D89F25B06FF70004C045 /* CheatDiceViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -24,6 +25,7 @@
 		9A70D89225B05FC50004C045 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		9A70D89525B05FC50004C045 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		9A70D89725B05FC50004C045 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		9A70D89F25B06FF70004C045 /* CheatDiceViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CheatDiceViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -63,6 +65,7 @@
 				9A70D89225B05FC50004C045 /* Assets.xcassets */,
 				9A70D89425B05FC50004C045 /* LaunchScreen.storyboard */,
 				9A70D89725B05FC50004C045 /* Info.plist */,
+				9A70D89F25B06FF70004C045 /* CheatDiceViewController.swift */,
 			);
 			path = CheatingDice;
 			sourceTree = "<group>";
@@ -138,6 +141,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				9A70D88E25B05FC10004C045 /* ViewController.swift in Sources */,
+				9A70D8A025B06FF70004C045 /* CheatDiceViewController.swift in Sources */,
 				9A70D88A25B05FC10004C045 /* AppDelegate.swift in Sources */,
 				9A70D88C25B05FC10004C045 /* SceneDelegate.swift in Sources */,
 			);
