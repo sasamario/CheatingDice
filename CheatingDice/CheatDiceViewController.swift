@@ -39,6 +39,16 @@ class CheatDiceViewController: UIViewController, UIGestureRecognizerDelegate {
         //viewにロングプレスジェスチャーインスタンスを追加
         self.view.addGestureRecognizer(longPressGesture)
         
+        
+        //上スワイプ用のインスタンスを生成する
+        let upSwipe = UISwipeGestureRecognizer(
+            target: self,
+            action: #selector(CheatDiceViewController.didSwipe(_:))
+        )
+        upSwipe.direction = .up
+        self.view.addGestureRecognizer(upSwipe)
+
+        
     }
     
     //シングルタップ時に実行されるメソッド
@@ -54,6 +64,18 @@ class CheatDiceViewController: UIViewController, UIGestureRecognizerDelegate {
     @objc func longPress(_ sender: UILongPressGestureRecognizer) {
         if sender.state == .ended {
             result.text = "2"
+        }
+    }
+    
+    //スワイプ時に実行されるメソッド
+    @objc func didSwipe(_ sender: UISwipeGestureRecognizer) {
+        
+        //スワイプ方向による実行処理をcase文で指定
+        switch sender.direction {
+        case .up:
+            result.text = "3"
+        default:
+            break
         }
     }
     
