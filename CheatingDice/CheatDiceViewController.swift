@@ -64,6 +64,13 @@ class CheatDiceViewController: UIViewController, UIGestureRecognizerDelegate {
         downSwipe.direction = .down
         self.view.addGestureRecognizer(downSwipe)
         
+        //左スワイプ用のインスタンスを生成する
+        let leftSwipe = UISwipeGestureRecognizer(
+            target: self,
+            action: #selector(CheatDiceViewController.didSwipe(_:))
+        )
+        leftSwipe.direction = .left
+        self.view.addGestureRecognizer(leftSwipe)
     }
     
     //シングルタップ時に実行されるメソッド
@@ -93,6 +100,8 @@ class CheatDiceViewController: UIViewController, UIGestureRecognizerDelegate {
             result.text = "4"
         case .down:
             result.text = "5"
+        case .left:
+            result.text = "6"
         default:
             break
         }
