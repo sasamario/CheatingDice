@@ -11,6 +11,9 @@ class CheatDiceViewController: UIViewController, UIGestureRecognizerDelegate {
 
     @IBOutlet weak var result: UILabel!
     
+    @IBOutlet weak var diceResultImage: UIImageView!
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -77,6 +80,7 @@ class CheatDiceViewController: UIViewController, UIGestureRecognizerDelegate {
     @objc func singleTap(_ sender: UITapGestureRecognizer) {
         if sender.state == .ended {
             
+            diceResultImage.image = UIImage(named: "dice1")
             //サイコロの目を1にする
             result.text = "1"
         }
@@ -85,6 +89,7 @@ class CheatDiceViewController: UIViewController, UIGestureRecognizerDelegate {
     //ロングプレス時に実行されるメソッド
     @objc func longPress(_ sender: UILongPressGestureRecognizer) {
         if sender.state == .ended {
+            diceResultImage.image = UIImage(named: "dice2")
             result.text = "2"
         }
     }
@@ -95,12 +100,16 @@ class CheatDiceViewController: UIViewController, UIGestureRecognizerDelegate {
         //スワイプ方向による実行処理をcase文で指定
         switch sender.direction {
         case .up:
+            diceResultImage.image = UIImage(named: "dice3")
             result.text = "3"
         case .right:
+            diceResultImage.image = UIImage(named: "dice4")
             result.text = "4"
         case .down:
+            diceResultImage.image = UIImage(named: "dice5")
             result.text = "5"
         case .left:
+            diceResultImage.image = UIImage(named: "dice6")
             result.text = "6"
         default:
             break
