@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		9A14C02E25B306D300C03F2C /* diceroll.mov in Resources */ = {isa = PBXBuildFile; fileRef = 9A14C02D25B306D300C03F2C /* diceroll.mov */; };
 		9A70D88A25B05FC10004C045 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A70D88925B05FC10004C045 /* AppDelegate.swift */; };
 		9A70D88C25B05FC10004C045 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A70D88B25B05FC10004C045 /* SceneDelegate.swift */; };
 		9A70D88E25B05FC10004C045 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A70D88D25B05FC10004C045 /* ViewController.swift */; };
@@ -17,6 +18,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		9A14C02D25B306D300C03F2C /* diceroll.mov */ = {isa = PBXFileReference; lastKnownFileType = video.quicktime; path = diceroll.mov; sourceTree = "<group>"; };
 		9A70D88625B05FC10004C045 /* CheatingDice.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CheatingDice.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		9A70D88925B05FC10004C045 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		9A70D88B25B05FC10004C045 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -66,6 +68,7 @@
 				9A70D89425B05FC50004C045 /* LaunchScreen.storyboard */,
 				9A70D89725B05FC50004C045 /* Info.plist */,
 				9A70D89F25B06FF70004C045 /* CheatDiceViewController.swift */,
+				9A14C02D25B306D300C03F2C /* diceroll.mov */,
 			);
 			path = CheatingDice;
 			sourceTree = "<group>";
@@ -129,6 +132,7 @@
 			files = (
 				9A70D89625B05FC50004C045 /* LaunchScreen.storyboard in Resources */,
 				9A70D89325B05FC50004C045 /* Assets.xcassets in Resources */,
+				9A14C02E25B306D300C03F2C /* diceroll.mov in Resources */,
 				9A70D89125B05FC10004C045 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
