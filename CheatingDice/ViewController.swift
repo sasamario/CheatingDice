@@ -32,8 +32,6 @@ class ViewController: UIViewController {
     
     //サイコロを振るボタン
     @IBAction func diceRoll(_ sender: Any) {
-        //動画が流れる際は、画像を非表示にしたいため
-        diceResultImage.image = nil
         
         result.text = "確認中"
         
@@ -62,6 +60,9 @@ class ViewController: UIViewController {
     
     //サイコロ動画再生する処理
     func playVideo() {
+        //動画が流れる際は、画像を非表示にしたいため
+        diceResultImage.image = nil
+        
         let path = Bundle.main.path(forResource: "diceroll", ofType: "mov")
         player = AVPlayer(url: URL(fileURLWithPath: path!))
         
