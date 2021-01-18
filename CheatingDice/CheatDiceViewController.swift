@@ -137,6 +137,8 @@ class CheatDiceViewController: UIViewController, UIGestureRecognizerDelegate {
         result.text = "確認中"
         
         //ジェスチャー（タップ、ロングプレス、スワイプ）の無効化処理を実装する必要あり
+        //タップイベント無効化
+        self.view.isUserInteractionEnabled = false
         
         
         //動画再生
@@ -151,7 +153,8 @@ class CheatDiceViewController: UIViewController, UIGestureRecognizerDelegate {
             self.diceResultImage.image = UIImage(named: "dice\(diceNumber)")
             
             //ジェスチャーの有効化処理を実装する必要あり
-            
+            //タップイベント有効化
+            self.view.isUserInteractionEnabled = true
             
         }
     }
