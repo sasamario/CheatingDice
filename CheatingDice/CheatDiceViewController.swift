@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import AVFoundation
 
 class CheatDiceViewController: UIViewController, UIGestureRecognizerDelegate {
 
@@ -13,6 +14,9 @@ class CheatDiceViewController: UIViewController, UIGestureRecognizerDelegate {
     
     @IBOutlet weak var diceResultImage: UIImageView!
     
+    @IBOutlet weak var diceResultView: UIView!
+    
+    var player = AVPlayer()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -79,18 +83,14 @@ class CheatDiceViewController: UIViewController, UIGestureRecognizerDelegate {
     //シングルタップ時に実行されるメソッド
     @objc func singleTap(_ sender: UITapGestureRecognizer) {
         if sender.state == .ended {
-            
-            diceResultImage.image = UIImage(named: "dice1")
-            //サイコロの目を1にする
-            result.text = "1"
+            diceRoll(diceNumber: 1)
         }
     }
     
     //ロングプレス時に実行されるメソッド
     @objc func longPress(_ sender: UILongPressGestureRecognizer) {
         if sender.state == .ended {
-            diceResultImage.image = UIImage(named: "dice2")
-            result.text = "2"
+            diceRoll(diceNumber: 2)
         }
     }
     
@@ -100,22 +100,61 @@ class CheatDiceViewController: UIViewController, UIGestureRecognizerDelegate {
         //スワイプ方向による実行処理をcase文で指定
         switch sender.direction {
         case .up:
-            diceResultImage.image = UIImage(named: "dice3")
-            result.text = "3"
+            diceRoll(diceNumber: 3)
         case .right:
-            diceResultImage.image = UIImage(named: "dice4")
-            result.text = "4"
+            diceRoll(diceNumber: 4)
         case .down:
-            diceResultImage.image = UIImage(named: "dice5")
-            result.text = "5"
+            diceRoll(diceNumber: 5)
         case .left:
-            diceResultImage.image = UIImage(named: "dice6")
-            result.text = "6"
+            diceRoll(diceNumber: 6)
         default:
             break
         }
     }
     
+    //サイコロ動画再生する処理
+    func playVideo() {
+        //動画が流れる際は、画像を非表示にしたいため
+        diceResultImage.image = nil
+        
+        let path = Bundle.main.path(forResource: "diceroll", ofType: "mov")
+        player = AVPlayer(url: URL(fileURLWithPath: path!))
+        
+        //AVPlayer用のレイヤーを生成
+        let playerLayer = AVPlayerLayer(player: player)
+        playerLayer.frame = self.diceResultView.bounds
+        
+        //画像を表示するImageViewより高さを低くするため
+        playerLayer.zPosition = -1
+        
+        self.diceResultView.layer.addSublayer(playerLayer)
+        
+        //再生
+        player.play()
+    }
+    
+    func diceRoll(diceNumber: Int) {
+        result.text = "確認中"
+        
+        //ジェスチャー（タップ、ロングプレス、スワイプ）の無効化処理を実装する必要あり
+        
+        
+        //動画再生
+        playVideo()
+        
+        //遅延処理（動画再生後に実行）
+        DispatchQueue.main.asyncAfter(deadline: .now() + 3) {
+            //resultLabelに反映
+            self.result.text = String(diceNumber)
+            
+            //出た目のサイコロ画像を表示する
+            self.diceResultImage.image = UIImage(named: "dice\(diceNumber)")
+            
+            //ジェスチャーの有効化処理を実装する必要あり
+            
+            
+        }
+    }
     
     /*
     // MARK: - Navigation
