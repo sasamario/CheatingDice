@@ -136,8 +136,7 @@ class CheatDiceViewController: UIViewController, UIGestureRecognizerDelegate {
     func diceRoll(diceNumber: Int) {
         result.text = "確認中"
         
-        //ジェスチャー（タップ、ロングプレス、スワイプ）の無効化処理を実装する必要あり
-        //タップイベント無効化
+        //ジェスチャー（タップ、ロングプレス、スワイプ）の無効化処理
         self.view.isUserInteractionEnabled = false
         
         
@@ -152,8 +151,7 @@ class CheatDiceViewController: UIViewController, UIGestureRecognizerDelegate {
             //出た目のサイコロ画像を表示する
             self.diceResultImage.image = UIImage(named: "dice\(diceNumber)")
             
-            //ジェスチャーの有効化処理を実装する必要あり
-            //タップイベント有効化
+            //ジェスチャー（タップ、ロングプレス、スワイプ）の有効化処理
             self.view.isUserInteractionEnabled = true
             
         }
