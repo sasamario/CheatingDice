@@ -11,7 +11,7 @@ class HelpViewController: UIViewController, UITableViewDelegate, UITableViewData
     
     @IBOutlet weak var tableView: UITableView!
     
-    var gestureIconList = ["tap", "longpress", "up", "right", "down", "left"]
+    var gestureIconList = ["tap", "longpress", "up", "right", "down", "left", "caution"]
 
     var gestureMessageList = [
         "タップすると1が出ます",
@@ -19,7 +19,8 @@ class HelpViewController: UIViewController, UITableViewDelegate, UITableViewData
         "上にスワイプすると3が出ます",
         "右にスワイプすると4が出ます",
         "下にスワイプすると5が出ます",
-        "左にスワイプすると6が出ます"
+        "左にスワイプすると6が出ます",
+        "※サイコロを振るはフェイクボタン"
     ]
     
     override func viewDidLoad() {
@@ -50,9 +51,14 @@ class HelpViewController: UIViewController, UITableViewDelegate, UITableViewData
     //セルの高さを設定
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         
-        return view.frame.size.height / 7
+        return view.frame.size.height / 8
     }
-
+    
+    
+    @IBAction func back(_ sender: Any) {
+        dismiss(animated: true, completion: nil)
+    }
+    
     /*
     // MARK: - Navigation
 
