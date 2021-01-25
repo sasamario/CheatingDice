@@ -51,7 +51,7 @@ class HelpViewController: UIViewController, UITableViewDelegate, UITableViewData
     //セルの高さを設定
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         
-        return view.frame.size.height / 8
+        return view.frame.size.height / 9
     }
     
     
